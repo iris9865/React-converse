@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-logo {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 300px;
+  margin-top: -50px;
 }
-
-.App-link {
-  color: #61dafb;
+.nav-menu-area {
+  display: flex;
+  justify-content: center;
+  background-color: beige;
+  margin-top: -80px;
+  position: absolute;
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu {
+  display: flex;
+  margin-top: 20px;
+  list-style: none;
+  padding: 10px;
+}
+.menu li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 60px;
+}
+.search-box {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  padding: 5px;
+}
+.search-box input {
+  width: 220px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+.search-box input:focus {
+  outline: none;
+}
+.nav-header {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  /* z-index: 2; */
+}
+.nav-header * {
+  margin-right: 10px;
+  margin-top: 20px;
+}
+.cards_all {
+  margin-top: 30px;
+}
+.card {
+  margin-bottom: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.03);
+  z-index: 1;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.product-detail-img {
+  display: flex;
+  justify-content: flex-end;
+}
+.product-info {
+  font-size: 20px;
+}
+.drop-down {
+  margin-top: 20px;
+}
+.add-button {
+  margin-top: 20px;
+  width: 100%;
+}
+.choice {
+  color: #63786a;
+  font-size: 11px;
+  font-weight: bold;
+  height: 20px;
 }
