@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Navbar = ({authenticate, setAuthenticate}) => {
   const menuList = [
@@ -16,31 +18,23 @@ const Navbar = ({authenticate, setAuthenticate}) => {
   //   navigate('/login');
   // }
 
-  const search = (event) => {
-    if(event.key === "Enter") {
-      let keyword = event.target.value;
-      console.log('keyword', keyword);
-      navigate(`/?q=${keyword}`);  
-    }
-  }
-
   return (
     <div>
-      <div className='nav-header'>
-      {authenticate ? (
-        <div onClick={() => setAuthenticate(false)}> 
-          {/* <FontAwesomeIcon icon={faUser} /> */}
-          <span style={{cursor: 'pointer'}}>로그아웃</span>
-        </div> 
-      ) : (
-        <div onClick={() => navigate('/login')}>
-          {/* <FontAwesomeIcon icon={faUser} /> */}
-          <span style={{cursor: 'pointer'}}>로그인</span>
-        </div>
-      )}
+      <div className='main-logo' onClick={() => navigate('/')}>
+        <img src='img/logo.png'/>
       </div>
-      <div className='main-logo'>
-        <img src='https://www.converse.co.kr/web/upload/seo_og_image.png'/>
+      <div className='nav-header'>
+        {authenticate ? (
+          <div onClick={() => setAuthenticate(false)}> 
+            {/* <FontAwesomeIcon icon={faUser} /> */}
+            <span style={{cursor: 'pointer'}}>로그아웃</span>
+          </div> 
+        ) : (
+          <div onClick={() => navigate('/login')}>
+            {/* <FontAwesomeIcon icon={faUser} /> */}
+            <span style={{cursor: 'pointer'}}>로그인</span>
+          </div>
+        )}
       </div>
       <div className='nav-menu-area'>
         <ul className='menu'>
@@ -52,10 +46,12 @@ const Navbar = ({authenticate, setAuthenticate}) => {
             </li>
           ))}
         </ul>
-        <div className='search-box'>
-          <input type='text' placeholder='검색' onKeyPress={search}/>
-        </div>
       </div>
+      <button className='toggleBtn'>
+        <span class="hamburger_icon">
+          <FontAwesomeIcon icon={faBars} />
+        </span>
+      </button>
     </div>
   )
 }

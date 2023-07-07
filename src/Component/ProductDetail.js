@@ -8,7 +8,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(false);
   const getProductDetail = async () => {
-    let url = `http://localhost:3005/products/${id}`;
+    let url = `https://my-json-server.typicode.com/iris9865/React-converse/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
     setLoading(false);
@@ -20,10 +20,10 @@ const ProductDetail = () => {
   }, []);
   if(loading || product == null) return <h1>Loading</h1>
   return (
-    <Container style={{ marginTop: "120px"}}>
+    <Container style={{ marginTop: "50px"}}>
       <Row>
         <Col className='product-detail-img'>
-          <img src={product.img} />
+          <img style={{width: 800}} src={product.img} />
         </Col>
         <Col style={{ marginLeft: "80px"}}>
           <div className='product-info'>{product.title}</div>

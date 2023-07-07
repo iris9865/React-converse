@@ -7,35 +7,40 @@ const Form = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vh;
-  background-color: #fffffd;
+  width: 700px;
+  height: 600px;
+  box-shadow: 5px 5px 15px rgba( 0, 0, 0, 0.1);
+  
 `;
 const FormDetail = styled.div`
   width: 400px;
   height: 60px;
   display: flex;
-  justify-content: flex-end;
-`;
-const Label = styled.label`
-  margin-right: 10px;
+  justify-content: center;
 `;
 const Input = styled.input`
   width: 300px;
   margin-bottom: 10px;
   padding-left: 20px;
+  border: 1px solid lightgray
+  border-radius: 10px;
 `;
 const SubmitInput = styled.input`
-  background-color: purple;
-  border: none;
+  background-color: rgb(255, 255, 243);
+  border: 1px solid lightgray;
   border-radius: 10px;
-  color: white;
-  width: 15vw;
-  height: 5vh;
+  width: 200px;
+  height: 60px;
   text-decoration: none;
   text-align: center;
   font-size: 18px;
   margin-top: 20px;
-  margin-left: 70px;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: navy;
+    color: white;
+  }
 `;
 
 const Login = ({ setAuthenticate }) => {
@@ -47,18 +52,24 @@ const Login = ({ setAuthenticate }) => {
     navigate('/');
   };
   return (
-    <div>
+    <div className='login'>
       <Form>
+        <h2 style={{marginBottom: "40px"}}>Sign In</h2>
         <FormDetail>
-          <Label>이메일</Label>
-          <Input type='text'></Input>
+          <Input type='email' placeholder='이메일을 입력하세요'></Input>
         </FormDetail>
         <FormDetail>
-          <Label>비밀번호</Label>
-          <Input type='password'></Input>
+          <Input type='password' placeholder='비밀번호를 입력하세요'></Input>
         </FormDetail>
         <SubmitInput type="submit" value="로그인" onClick={loginUser}/>
       </Form>
+      <div className='login-img'>
+        <img src='/img/banner2.png'></img>
+        <div className='login-img-text'>
+          <h2>Find Your Own Style!</h2> 
+          <h3>Love. Converse</h3>  
+        </div>
+      </div>
     </div>
   )
 }

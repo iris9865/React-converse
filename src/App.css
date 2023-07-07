@@ -1,13 +1,18 @@
+/* 메인 로고 */
 .main-logo {
   display: flex;
   justify-content: center;
   height: 300px;
-  margin-top: -50px;
+  margin-top: -60px;
 }
+.main-logo img {
+  cursor: pointer;
+}
+/* 네비게이션 바 */
 .nav-menu-area {
   display: flex;
   justify-content: center;
-  background-color: beige;
+  background-color: rgb(255, 255, 251);
   margin-top: -80px;
   position: absolute;
   width: 100%;
@@ -21,37 +26,61 @@
 .menu li a {
   text-decoration: none;
   color: #000;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
   padding: 20px 60px;
 }
+/* 메인 배너 */
+.main-banner {
+  background-color: black;
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+}
+.main-banner img {
+  height: 800px;
+}
+.main-banner-text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.main-banner-text h1{
+  font-size: 80px;
+  margin-bottom: 40px;
+}
+.main-banner-text h3{
+  font-size: 20px;
+}
+/* 검색창 */
 .search-box {
-  position: absolute;
-  top: 20px;
-  right: 100px;
-  padding: 5px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 .search-box input {
-  width: 220px;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 15px;
+  width: 400px;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  padding: 10px 30px;
 }
 .search-box input:focus {
   outline: none;
 }
+/* 로그인/로그아웃 */
 .nav-header {
   position: absolute;
   top: 100px;
   right: 0;
-  /* z-index: 2; */
 }
 .nav-header * {
   margin-right: 10px;
   margin-top: 20px;
 }
+/* 전체상품 */
 .cards_all {
   margin-top: 30px;
+  margin-bottom: 200px;
 }
 .card {
   margin-bottom: 15px;
@@ -59,10 +88,11 @@
   cursor: pointer;
 }
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
   z-index: 1;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
+/* 상품 상세페이지 */
 .product-detail-img {
   display: flex;
   justify-content: flex-end;
@@ -82,4 +112,62 @@
   font-size: 11px;
   font-weight: bold;
   height: 20px;
+}
+
+/* 로그인페이지 */
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.login-img img{
+  height: 600px;
+  filter: brightness(70%);
+}
+.login-img-text {
+  position: absolute;
+  top: 50%; left: 60%;
+
+  transform: translate(-20%, -50%);
+  text-align: center;
+  color: white; 
+}
+
+.toggleBtn{
+  display: none;
+  position: absolute;
+  right: 14px;
+  top: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 38px;
+}
+
+
+@media all and (max-width:777px) {
+  .main-logo {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    margin-top: -30px;
+  }
+  .nav-menu-area {
+    display: none;
+  }
+  .main-banner {
+    width: 100%;
+  }
+  .main-banner img{
+    height: 100%;
+  }
+  .login-img {
+    display: none;
+  }
+  .toggleBtn{
+    display: flex;
+  }
+  .main-banner-text {
+    display: none;
+  }
 }

@@ -7,11 +7,11 @@ const ProductCard = ({item}) => {
     navigate(`/product/${item.id}`);
   }
   return (
-    <div className='card' onClick={showDetail}>
+    <div className='card' onClick={showDetail} style={{textAlign: "center", lineHeight: "30px"}}>
       <img src={item.img}/>
-      <div>{item.title}</div>
+      <div style={{fontSize: "20px", fontWeight:"bold"}}>{item.title}</div>
       <div>{item.price}</div>
-      <div>{item.new === true ? "New!" : ""}</div>
+      <div style={{color: "crimson"}}>{item.new === true ? "New!" : ""}</div>
     </div>
   )
 }
